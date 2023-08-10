@@ -28,9 +28,7 @@ function fnReset() {
   hour = 0;
   min = 0;
   sec = 0;
-  hourEle.innerText = formatTime(hour);
-  minEle.innerText = formatTime(min);
-  secEle.innerText = formatTime(sec);
+  updatePage();
   console.log("Clock has been Reset");
 }
 
@@ -45,11 +43,15 @@ function myTimer() {
     min = 0;
     hour++;
   }
-  hourEle.innerText = formatTime(hour);
-  minEle.innerText = formatTime(min);
-  secEle.innerText = formatTime(sec);
+  updatePage();
 }
 
 function formatTime(key) {
   return key >= 10 ? `${key}` : `0${key}`;
+}
+
+function updatePage() {
+  hourEle.innerText = formatTime(hour);
+  minEle.innerText = formatTime(min);
+  secEle.innerText = formatTime(sec);
 }
